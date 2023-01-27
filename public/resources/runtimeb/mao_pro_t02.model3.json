@@ -1,0 +1,43 @@
+{
+  "Version": 3,
+  "FileReferences": {
+    "Moc": "mao_pro_t02.moc3",
+    "Textures": ["mao_pro_t02.4096/texture_00.png"],
+    "Physics": "mao_pro_t02.physics3.json",
+    "DisplayInfo": "mao_pro_t02.cdi3.json",
+    "Motions": {
+      "Idle": [
+        {
+          "File": "motions/mtn_01.motion3.json"
+        }
+      ],
+      "Tap@Body": [
+        {
+          "File": "motions/special_01.motion3.json"
+        }
+      ]
+    }
+  },
+  "Groups": [
+    {
+      "Target": "Parameter",
+      "Name": "LipSync",
+      "Ids": []
+    },
+    {
+      "Target": "Parameter",
+      "Name": "EyeBlink",
+      "Ids": ["ParamEyeLOpen", "ParamEyeROpen"]
+    }
+  ],
+  "HitAreas": [
+    {
+      "Id": "HitAreaHead",
+      "Name": ""
+    },
+    {
+      "Id": "HitAreaBody",
+      "Name": ""
+    }
+  ]
+}
