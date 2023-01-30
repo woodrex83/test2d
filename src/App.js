@@ -5,6 +5,8 @@ import { Live2DModel } from "pixi-live2d-display/cubism4";
 window.PIXI = PIXI;
 
 Live2DModel.registerTicker(PIXI.Ticker);
+// register InteractionManager to make Live2D models interactive
+PIXI.Renderer.registerPlugin("interaction", PIXI.InteractionManager);
 
 function App() {
   useEffect(() => {
@@ -14,7 +16,7 @@ function App() {
       resizeTo: window
     });
 
-    Live2DModel.from("resources/runtime/rice_pro_t03.model3.json").then(
+    Live2DModel.from("resource/runtime/rice_pro_t03.model3.json").then(
       (model) => {
         app.stage.addChild(model);
 
@@ -22,7 +24,7 @@ function App() {
         model.position.set(window.innerWidth / 2, window.innerHeight / 2);
         model.scale.set(0.1, 0.1);
 
-        model.on("hit", () => {
+        model.on("pointertap", () => {
           model.motion("Tap@Body");
         });
       }
